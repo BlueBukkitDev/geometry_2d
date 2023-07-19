@@ -1,0 +1,8 @@
+[package]
+name = "geometry_2d"
+version = "0.0.1"
+authors = ["Blue Dev"]
+
+
+[dependencies]
+rand = "0.7.3"
