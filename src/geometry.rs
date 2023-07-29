@@ -192,3 +192,33 @@ impl Position {
         return 270.0+f32::acos((self.x-target.x)/self.distance(target))//top left
     }
 }
+
+
+
+#[derive(Copy, Clone)]
+pub struct Position_i32 {
+    pub x:i32,
+    pub y:i32
+}
+
+impl Position_i32 {
+    pub fn new(x:i32, y:i32) -> Position_i32 {
+        Position_i32 {
+            x: x,
+            y: y,
+        }
+    }
+
+    pub fn distance(&self, point: Position_i32) -> i32 {
+        let a = (self.x as f32)-(point.x as f32);
+        let b = (self.y as f32)-(point.y as f32);
+        return ((a*a)+(b*b)).sqrt() as i32;
+    }
+
+    pub fn from_Position(pos:Position) -> Position_i32 {
+        Position_i32 {
+            x: pos.x as i32, 
+            y: pos.y as i32
+        }
+    }
+}
